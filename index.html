@@ -1,898 +1,469 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GELATÒ • Curso de Sorvete Artesanal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #FFF9F0;
-            --bg2: #FFF5E6;
-            --bg3: #FFE8D6;
-            --primary: #FF6B4A;
-            --primary-dark: #E85B3A;
-            --secondary: #7B3F5C;
-            --green: #2D6A4F;
-            --yellow: #FFC107;
-            --chocolate: #3E2723;
-            --white: #ffffff;
-            --cream: #FFF9F0;
-            --text-dark: #3E2723;
-            --text-gray: #6B5B52;
-            --font-title: 'Playfair Display', 'Young Serif', Georgia, serif;
-            --font-body: 'Inter', 'DM Sans', sans-serif;
-            --font-accent: 'Space Grotesk', sans-serif;
-            --shadow-sm: 0 2px 8px rgba(62, 39, 35, 0.06);
-            --shadow-md: 0 8px 32px rgba(62, 39, 35, 0.10);
-            --shadow-lg: 0 20px 48px rgba(62, 39, 35, 0.14);
-            --shadow-primary: 0 6px 24px rgba(255, 107, 74, 0.35);
-            --shadow-green: 0 4px 16px rgba(45, 106, 79, 0.25);
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --radius-xl: 36px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --spring: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LordVigor &mdash; F&oacute;rmula Masculina Personalizada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:#fff;color:#333}
+    img{max-width:100%;height:auto}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* HEADER */
+    .site-header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.08);padding:0 20px}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-size:22px;font-weight:900;color:#1a3a5c;text-decoration:none;letter-spacing:1px}
+    .logo span{color:#cc0000}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{text-decoration:none;font-size:13px;font-weight:600;color:#555;transition:color .2s}
+    .nav-links a:hover{color:#1a3a5c}
+    .header-cta{background:#cc0000;color:#fff;font-size:13px;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+    .header-cta:hover{transform:scale(1.04);box-shadow:0 4px 14px rgba(204,0,0,.3)}
+    .menu-toggle{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:#1a3a5c}
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#0f2a45 0%,#1a3a5c 50%,#244b6e 100%);padding:80px 20px 60px;overflow:hidden}
+    .hero-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:50px}
+    .hero-copy{flex:1}
+    .hero-badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#f4d03f;font-size:12px;font-weight:700;padding:6px 16px;border-radius:30px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase}
+    .hero h1{color:#fff;font-size:38px;font-weight:900;line-height:1.2;margin-bottom:18px}
+    .hero h1 span{color:#f4d03f}
+    .hero-sub{color:rgba(255,255,255,.8);font-size:16px;line-height:1.7;margin-bottom:28px;max-width:520px}
+    .hero-bullets{list-style:none;margin-bottom:32px}
+    .hero-bullets li{color:#fff;font-size:15px;font-weight:500;padding:8px 0;padding-left:28px;position:relative}
+    .hero-bullets li::before{content:'\2713';position:absolute;left:0;color:#f4d03f;font-weight:800;font-size:16px}
+    .hero-cta{display:inline-block;background:#f4d03f;color:#1a3a5c;font-size:17px;font-weight:800;padding:18px 40px;border-radius:8px;text-decoration:none;text-transform:uppercase;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(244,208,63,.35)}
+    .hero-cta:hover{transform:scale(1.05);box-shadow:0 6px 25px rgba(244,208,63,.5)}
+    .hero-image{flex:0 0 380px;text-align:center}
+    .hero-image img{max-width:340px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.4))}
 
-        body {
-            font-family: var(--font-body);
-            background: var(--bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* TRUST BAR */
+    .trust-bar{background:#f8f9fa;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:18px 20px}
+    .trust-inner{max-width:900px;margin:0 auto;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#444}
+    .trust-item .t-icon{font-size:22px}
 
-        a,
-        button,
-        input,
-        select,
-        [role="button"],
-        .clickable {
-            cursor: pointer;
-        }
+    /* VALUE PROPS */
+    .value-props{padding:70px 20px;background:#fff}
+    .value-props .section-title{text-align:center;font-size:28px;font-weight:800;color:#1a3a5c;margin-bottom:15px}
+    .value-props .section-sub{text-align:center;font-size:15px;color:#777;margin-bottom:50px;max-width:600px;margin-left:auto;margin-right:auto}
+    .vp-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .vp-card{background:#f8f9fa;border-radius:16px;padding:35px 28px;text-align:center;transition:transform .2s,box-shadow .2s}
+    .vp-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+    .vp-number{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#1a3a5c;color:#f4d03f;font-size:18px;font-weight:900;margin-bottom:18px}
+    .vp-card h3{font-size:18px;font-weight:800;color:#1a3a5c;margin-bottom:12px;line-height:1.3}
+    .vp-card p{font-size:14px;color:#666;line-height:1.7}
 
-        /* HEADER */
-        #site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 16px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 249, 240, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 107, 74, 0.15);
-            transition: padding 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-        }
-        #site-header.scrolled {
-            padding: 10px 40px;
-            background: rgba(255, 249, 240, 0.96);
-            box-shadow: 0 2px 20px rgba(62, 39, 35, 0.08);
-        }
-        .logo {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            font-style: italic;
-            font-weight: 700;
-            color: var(--secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            letter-spacing: -0.02em;
-            transition: font-size 0.35s ease;
-        }
-        .scrolled .logo {
-            font-size: 1.5rem;
-        }
-        .logo-icon {
-            font-size: 1.6rem;
-            transition: font-size 0.35s ease;
-        }
-        .scrolled .logo-icon {
-            font-size: 1.3rem;
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-            align-items: center;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            padding: 4px 0;
-            transition: color var(--transition);
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 2.5px;
-            background: var(--primary);
-            border-radius: 4px;
-            transition: width 0.35s ease;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .header-cta {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 11px 22px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            font-family: var(--font-body);
-            transition: all var(--transition);
-            white-space: nowrap;
-            box-shadow: var(--shadow-primary);
-            text-decoration: none;
-            display: inline-block;
-        }
-        .header-cta:hover {
-            background: var(--primary-dark);
-            transform: scale(1.05);
-            box-shadow: 0 10px 28px rgba(255, 107, 74, 0.45);
-        }
-        .user-icon {
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--text-dark);
-        }
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            #site-header {
-                padding: 12px 20px;
-            }
-            .scrolled {
-                padding: 8px 20px;
-            }
-            .header-cta {
-                padding: 9px 16px;
-            }
-        }
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--text-dark);
-        }
+    /* HOW IT WORKS */
+    .how-it-works{background:#1a3a5c;padding:70px 20px;color:#fff}
+    .how-inner{max-width:750px;margin:0 auto}
+    .how-it-works .section-title{text-align:center;font-size:28px;font-weight:800;color:#fff;margin-bottom:15px}
+    .how-it-works .section-sub{text-align:center;font-size:15px;color:rgba(255,255,255,.7);margin-bottom:40px}
+    .how-it-works h3{font-size:20px;font-weight:800;color:#f4d03f;margin:30px 0 15px;text-align:center}
+    .how-it-works p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.8;margin-bottom:16px}
+    .how-it-works strong{color:#fff}
+    .how-it-works video,.how-it-works img{display:block;max-width:100%;margin:25px auto;border-radius:10px}
 
-        /* HERO */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 60px 80px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(180deg, #FFF9F0 0%, #FFF5E6 50%, #FFE8D6 100%);
-        }
-        @media (max-width: 900px) {
-            #hero {
-                flex-direction: column-reverse;
-                padding: 100px 24px 60px;
-                text-align: center;
-                gap: 40px;
-            }
-        }
-        .hero-left {
-            flex: 0 0 55%;
-            z-index: 2;
-            position: relative;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(45, 106, 79, 0.12);
-            color: var(--green);
-            border-radius: 50px;
-            padding: 8px 18px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(45, 106, 79, 0.2);
-        }
-        .hero-title {
-            font-family: var(--font-title);
-            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-            line-height: 1.15;
-            font-weight: 800;
-            color: var(--chocolate);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        .hero-title .highlight {
-            color: var(--primary);
-            display: inline-block;
-            animation: waveText 2.5s ease-in-out infinite;
-        }
-        @keyframes waveText {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            25% {
-                transform: translateY(-6px);
-            }
-            50% {
-                transform: translateY(0);
-            }
-            75% {
-                transform: translateY(4px);
-            }
-        }
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 28px;
-            max-width: 480px;
-            line-height: 1.7;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-bottom: 28px;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 14px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            transition: all var(--transition);
-            box-shadow: var(--shadow-primary);
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: scale(1.05);
-            box-shadow: 0 12px 32px rgba(255, 107, 74, 0.5);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 14px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all var(--transition);
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .btn-outline::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--primary);
-            z-index: -1;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-            border-radius: 50px;
-        }
-        .btn-outline:hover {
-            color: #fff;
-        }
-        .btn-outline:hover::before {
-            transform: scaleX(1);
-        }
-        .social-proof {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .avatars {
-            display: flex;
-        }
-        .avatars span {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #f0c8b8;
-            border: 3px solid #fff;
-            margin-left: -10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .avatars span:first-child {
-            margin-left: 0;
-        }
-        .stars-text {
-            font-weight: 600;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-        }
-        .hero-right {
-            flex: 0 0 45%;
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-        }
-        .hero-icecream {
-            position: relative;
-            width: 320px;
-            height: 400px;
-            animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-            30% {
-                transform: translateY(-22px);
-            }
-            60% {
-                transform: translateY(-8px);
-            }
-        }
-        .hero-icecream .scoop-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: -20px;
-            position: relative;
-        }
-        .hero-icecream .scoop {
-            width: 130px;
-            height: 110px;
-            border-radius: 60% 60% 45% 45%;
-            position: relative;
-            box-shadow: inset 0 -15px 30px rgba(0, 0, 0, 0.12), 0 10px 30px rgba(0, 0, 0, 0.18);
-        }
-        .scoop-1 {
-            background: radial-gradient(circle at 40% 30%, #ffb3c1, #e8576b);
-            z-index: 3;
-        }
-        .scoop-2 {
-            background: radial-gradient(circle at 40% 30%, #fffef5, #f5e6c8);
-            z-index: 2;
-            margin-top: -28px;
-        }
-        .scoop-3 {
-            background: radial-gradient(circle at 40% 30%, #8b5e3c, #3e2723);
-            z-index: 1;
-            margin-top: -28px;
-        }
-        .cone-triangle {
-            width: 0;
-            height: 0;
-            border-left: 45px solid transparent;
-            border-right: 45px solid transparent;
-            border-top: 90px solid #d4a574;
-            margin-top: -18px;
-            position: relative;
-            z-index: 0;
-            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
-        }
-        .particle {
-            position: absolute;
-            font-size: 1.2rem;
-            animation: orbit 6s linear infinite;
-            pointer-events: none;
-            opacity: 0.7;
-        }
-        .chocolate-wave {
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-        }
-        .chocolate-wave svg {
-            width: 100%;
-            height: 80px;
-            display: block;
-        }
+    /* PRICING */
+    .pricing-section{padding:70px 20px}
+    .pricing-dark{background:linear-gradient(180deg,#0f2a45,#1a3a5c)}
+    .pricing-light{background:#f8f9fa}
+    .pricing-section .section-title{text-align:center;font-size:28px;font-weight:800;margin-bottom:10px}
+    .pricing-dark .section-title{color:#fff}
+    .pricing-light .section-title{color:#1a3a5c}
+    .pricing-section .section-sub{text-align:center;font-size:15px;margin-bottom:45px}
+    .pricing-dark .section-sub{color:rgba(255,255,255,.7)}
+    .pricing-light .section-sub{color:#777}
+    .pricing-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+    .p-card{background:#fff;border-radius:18px;padding:30px 22px;text-align:center;position:relative;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .2s;border:2px solid #e8e8e8}
+    .p-card:hover{transform:translateY(-4px)}
+    .p-card.featured{border:3px solid #f4d03f;box-shadow:0 8px 35px rgba(244,208,63,.2);transform:scale(1.04);z-index:2}
+    .p-card.featured:hover{transform:scale(1.06)}
+    .p-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#cc0000;color:#fff;font-size:12px;font-weight:700;padding:5px 18px;border-radius:20px;white-space:nowrap}
+    .p-off{position:absolute;top:-14px;right:16px;background:#f4d03f;color:#1a3a5c;font-size:11px;font-weight:800;padding:4px 12px;border-radius:15px}
+    .p-card h3{font-size:22px;font-weight:800;color:#1a3a5c;margin-top:10px;margin-bottom:4px}
+    .p-subtitle{font-size:13px;color:#999;margin-bottom:15px}
+    .p-card .p-img img{max-width:160px;margin:0 auto 15px}
+    .p-card .p-per{font-size:12px;color:#2ecc71;font-weight:700;margin-bottom:8px}
+    .p-old{font-size:16px;color:#999;text-decoration:line-through;margin-bottom:4px}
+    .p-installment{font-size:14px;color:#666;margin-bottom:2px}
+    .p-price{font-size:36px;font-weight:900;color:#cc0000;margin:4px 0}
+    .p-price .cur{font-size:18px;vertical-align:top;margin-right:2px}
+    .p-total{font-size:13px;color:#888;margin-bottom:14px}
+    .p-buttons{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+    .p-btn{display:block;padding:15px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center;transition:transform .2s}
+    .p-btn:hover{transform:scale(1.03)}
+    .p-btn-card{background:#f4d03f;color:#1a3a5c}
+    .p-btn-pix{background:#2ecc71;color:#fff}
+    .p-ship{font-size:13px;color:#2ecc71;font-weight:600;margin:6px 0}
+    .p-guarantee{font-size:12px;color:#888}
+    .p-flags img{max-width:180px;margin-top:10px}
 
-        /* TRUST BAR */
-        #trust-bar {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 40px 30px;
-            background: #fffefb;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: transform var(--spring);
-        }
-        .trust-item:hover {
-            transform: scale(1.08);
-        }
-        .trust-item .trust-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255, 107, 74, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            transition: all var(--spring);
-        }
-        .trust-item:hover .trust-icon {
-            transform: scale(1.2) rotate(10deg);
-            background: rgba(255, 107, 74, 0.18);
-        }
-        .trust-text strong {
-            display: block;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-        .trust-text span {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
+    /* GUARANTEE */
+    .guarantee-section{background:linear-gradient(135deg,#fdf8e8,#fef9ec);padding:70px 20px}
+    .guarantee-box{max-width:750px;margin:0 auto;background:#fff;border-radius:18px;padding:45px 40px;box-shadow:0 4px 25px rgba(0,0,0,.06);border-left:5px solid #f4d03f}
+    .guarantee-box h2{font-size:24px;font-weight:800;color:#1a3a5c;margin-bottom:18px;text-align:center}
+    .guarantee-box p{font-size:15px;color:#555;line-height:1.8;margin-bottom:14px}
+    .guarantee-box strong{color:#1a3a5c}
 
-        /* SECTION TITLES */
-        .section-title {
-            text-align: center;
-            font-family: var(--font-title);
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-        .section-underline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-        .section-underline span {
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-            border-radius: 4px;
-        }
+    /* COPY BLOCKS */
+    .copy-block{padding:60px 20px}
+    .copy-block-alt{background:#f8f9fa}
+    .copy-inner{max-width:750px;margin:0 auto}
+    .copy-block h2{font-size:22px;font-weight:800;color:#1a3a5c;margin-bottom:20px;text-align:center;line-height:1.4}
+    .copy-block p{font-size:15px;color:#555;line-height:1.8;margin-bottom:16px}
+    .copy-block strong{color:#1a3a5c}
+    .copy-block img{display:block;max-width:100%;margin:25px auto;border-radius:10px}
 
-        /* PROGRAMA */
-        #programa {
-            padding: 80px 40px;
-            background: var(--bg);
-        }
-        .tab-nav {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        .tab-btn {
-            padding: 10px 24px;
-            border-radius: 50px;
-            border: 2px solid #e0d5cc;
-            background: transparent;
-            font-weight: 600;
-            color: var(--text-gray);
-            cursor: pointer;
-            transition: all var(--transition);
-            font-size: 0.9rem;
-        }
-        .tab-btn.active {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
-            box-shadow: var(--shadow-primary);
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .product-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 28px 20px 24px;
-            text-align: center;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        .product-img {
-            font-size: 5rem;
-            margin-bottom: 16px;
-        }
-        .product-name {
-            font-family: var(--font-title);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 4px;
-        }
-        .product-desc {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-bottom: 14px;
-        }
+    /* FAQ */
+    .faq-section{background:#1a3a5c;padding:70px 20px}
+    .faq-section .section-title{text-align:center;color:#fff;font-size:28px;font-weight:800;margin-bottom:40px}
+    .faq-container{max-width:750px;margin:0 auto}
+    .faq-item{background:#fff;border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    .faq-question{width:100%;background:none;border:none;font-family:inherit;font-size:15px;font-weight:700;color:#222;padding:18px 50px 18px 20px;text-align:left;cursor:pointer;position:relative}
+    .faq-question::after{content:'\25BC';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:12px;color:#1a3a5c;transition:transform .3s}
+    .faq-item.active .faq-question::after{transform:translateY(-50%) rotate(180deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+    .faq-answer p{padding:0 20px 18px;font-size:14px;color:#555;line-height:1.7}
+    .faq-item.active .faq-answer{max-height:500px}
 
-        /* ASSINATURA */
-        #assinatura {
-            padding: 80px 40px;
-            background: #fffefb;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 30 L42 45 L30 36 L18 45 L22 30 L10 20 L25 20 Z' fill='%23f0e0d0' opacity='0.25'/%3E%3C/svg%3E");
-            background-size: 80px 80px;
-        }
-        .plan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .plan-card {
-            background: #fff;
-            border-radius: var(--radius-xl);
-            padding: 32px 24px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition);
-            border: 2px solid transparent;
-            position: relative;
-        }
-        .plan-card.featured {
-            border: 3px solid var(--primary);
-            box-shadow: var(--shadow-lg);
-            transform: scale(1.03);
-            z-index: 2;
-        }
-        .popular-badge {
-            position: absolute;
-            top: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: #fff;
-            padding: 7px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: var(--shadow-primary);
-        }
-        .plan-price {
-            font-family: var(--font-accent);
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--chocolate);
-            margin: 12px 0;
-        }
-        .btn-plan {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 13px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-            box-shadow: var(--shadow-primary);
-            transition: all var(--transition);
-        }
-        .btn-plan:hover {
-            background: var(--primary-dark);
-            transform: scale(1.04);
-        }
+    /* WHATSAPP CTA */
+    .wpp-section{padding:60px 20px;text-align:center;background:#fff}
+    .wpp-section h2{font-size:24px;font-weight:800;color:#1a3a5c;margin-bottom:10px}
+    .wpp-section p{font-size:15px;color:#666;margin-bottom:25px}
+    .btn-wpp{display:inline-block;background:#25D366;color:#fff;font-size:17px;font-weight:700;padding:18px 40px;border-radius:50px;text-decoration:none;transition:transform .2s;box-shadow:0 4px 18px rgba(37,211,102,.35)}
+    .btn-wpp:hover{transform:scale(1.05)}
 
-        /* FOOTER */
-        #site-footer {
-            background: #2a1f1b;
-            color: #e8ddd3;
-            padding: 50px 40px 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        #site-footer h4 {
-            font-family: var(--font-title);
-            color: #fff;
-            margin-bottom: 12px;
-        }
-        #site-footer a {
-            color: #c0b0a0;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: block;
-            padding: 3px 0;
-            transition: color var(--transition);
-        }
-        #site-footer a:hover {
-            color: var(--primary);
-        }
-        .footer-bottom {
-            text-align: center;
-            padding: 16px;
-            background: #1a1412;
-            color: #a09080;
-            font-size: 0.85rem;
-        }
-    </style>
+    /* FOOTER */
+    .site-footer{background:#111;color:#999;padding:45px 20px;font-size:12px;line-height:1.8;text-align:center}
+    .site-footer p{max-width:900px;margin:0 auto 12px}
+    .footer-links{margin-top:20px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+    .footer-links a{color:#ccc;text-decoration:underline;font-size:12px}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .nav-links,.header-cta{display:none}
+      .menu-toggle{display:block}
+      .nav-mobile{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:20px;z-index:999}
+      .nav-mobile.open{display:block}
+      .nav-mobile a{display:block;padding:12px 0;font-size:15px;font-weight:600;color:#333;text-decoration:none;border-bottom:1px solid #eee}
+      .nav-mobile .mob-cta{display:block;background:#cc0000;color:#fff;text-align:center;font-weight:700;padding:14px;border-radius:8px;margin-top:12px;text-decoration:none}
+      .hero{padding:40px 20px 50px}
+      .hero-inner{flex-direction:column;text-align:center}
+      .hero h1{font-size:28px}
+      .hero-sub{margin-left:auto;margin-right:auto}
+      .hero-bullets{text-align:left;display:inline-block}
+      .hero-cta{font-size:15px;padding:16px 32px}
+      .hero-image{flex:none;margin-top:30px}
+      .hero-image img{max-width:260px}
+      .trust-inner{gap:20px}
+      .trust-item{font-size:12px}
+      .vp-grid{grid-template-columns:1fr}
+      .pricing-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+      .p-card.featured{transform:none}
+      .p-card.featured:hover{transform:translateY(-4px)}
+      .guarantee-box{padding:30px 24px}
+    }
+  </style>
 </head>
 <body>
-    <header id="site-header">
-        <a href="#" class="logo"><span class="logo-icon">🍦</span>GELATÒ</a>
-        <ul class="nav-links">
-            <li><a href="#programa">Programa</a></li>
-            <li><a href="#como-funciona">Como Funciona</a></li>
-            <li><a href="#assinatura">Planos</a></li>
-            <li><a href="#nossa-historia">Nossa História</a></li>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">Lord<span>Vigor</span></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge">F&oacute;rmula Exclusiva</div>
+        <h1>A Primeira F&oacute;rmula Masculina <span>100% Personalizada</span> ao Seu Organismo</h1>
+        <p class="hero-sub">Enquanto outros produtos tratam todo mundo igual, o LordVigor &eacute; feito exclusivamente para o SEU corpo. Responda um question&aacute;rio simples e receba um produto &uacute;nico.</p>
+        <ul class="hero-bullets">
+          <li>F&oacute;rmula adaptada ao seu peso, idade e necessidades</li>
+          <li>Ataca a causa raiz, n&atilde;o s&oacute; os sintomas</li>
+          <li>Acompanhamento gratuito por WhatsApp</li>
         </ul>
-        <div class="header-actions">
-            <button class="user-icon" title="Área do Aluno">👤</button>
-            <a href="https://wa.me/5519981909667?text=Ol%C3%A1%21+Tenho+interesse+no+curso+de+sorvete+artesanal." class="header-cta">Inscreva-se</a>
-            <button class="hamburger">☰</button>
+        <a href="#kits" class="hero-cta">QUERO RECUPERAR MINHA POT&Ecirc;NCIA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="t-icon">&#129514;</span> F&oacute;rmula Personalizada</div>
+      <div class="trust-item"><span class="t-icon">&#127807;</span> 100% Natural</div>
+      <div class="trust-item"><span class="t-icon">&#127463;&#127479;</span> Fabricado no Brasil</div>
+      <div class="trust-item"><span class="t-icon">&#11088;</span> 4.9/5 Avalia&ccedil;&atilde;o</div>
+    </div>
+  </div>
+
+  <!-- VALUE PROPS -->
+  <section class="value-props" id="beneficios">
+    <h2 class="section-title">Por Que o LordVigor &Eacute; Diferente?</h2>
+    <p class="section-sub">Tr&ecirc;s pilares que fazem o LordVigor ser o &uacute;nico produto do mercado com taxa de sucesso t&atilde;o alta.</p>
+    <div class="vp-grid">
+      <div class="vp-card">
+        <div class="vp-number">01</div>
+        <h3>Uma F&oacute;rmula Feita S&oacute; Pro Seu Corpo</h3>
+        <p>Ap&oacute;s a compra, voc&ecirc; responde um question&aacute;rio de 9 perguntas. Com base nisso, produzimos um composto exclusivo adaptado ao seu peso, idade e necessidades. Nenhum frasco &eacute; igual ao outro.</p>
+      </div>
+      <div class="vp-card">
+        <div class="vp-number">02</div>
+        <h3>Ataca a Causa Raiz do Problema</h3>
+        <p>O LordVigor n&atilde;o for&ccedil;a resultados artificiais como o Viagra. Ele age desentupindo as veias para que o fluxo sangu&iacute;neo volte a funcionar naturalmente, como era na sua juventude.</p>
+      </div>
+      <div class="vp-card">
+        <div class="vp-number">03</div>
+        <h3>Acompanhamento Gratuito no WhatsApp</h3>
+        <p>Voc&ecirc; n&atilde;o compra sozinho. Nossa equipe te acompanha pelo WhatsApp, tira d&uacute;vidas, lembra da dose e ainda oferece reajuste gratuito na dosagem caso necess&aacute;rio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="how-inner">
+      <h2 class="section-title">Como o LordVigor Funciona?</h2>
+      <p class="section-sub">Entenda por que os outros falharam e por que o LordVigor vai funcionar pra voc&ecirc;.</p>
+
+      <h3>Por Que o Viagra e as C&aacute;psulas N&atilde;o Funcionaram</h3>
+      <p>Voc&ecirc; j&aacute; tomou Viagra e funcionou no come&ccedil;o mas depois parou? Ou j&aacute; tomou c&aacute;psula da internet e n&atilde;o sentiu nada? Tem dois motivos pra isso.</p>
+      <p>Todos esses produtos foram feitos pra ser o mesmo pra todo mundo. O organismo de um homem de 45 anos com 70kg &eacute; totalmente diferente de um homem de 58 anos com 90kg. Esses produtos gen&eacute;ricos tratam como se fossem iguais, quando n&atilde;o s&atilde;o.</p>
+      <p>O LordVigor &eacute; diferente porque ele &eacute; <strong>PERSONALIZADO ao seu organismo</strong>. Ap&oacute;s a compra, voc&ecirc; responde esse question&aacute;rio:</p>
+      <img src="Questionario.jfif" alt="Question&aacute;rio LordVigor" style="max-width:400px">
+
+      <h3>O Segundo Motivo: A Causa Raiz</h3>
+      <p>Os produtos que voc&ecirc; tentou n&atilde;o atacam a causa raiz. O Viagra n&atilde;o cura nada. Ele s&oacute; <strong>FOR&Ccedil;A</strong> o sangue a passar em maior quantidade ao p&ecirc;nis. Depois que o efeito acaba, volta tudo como antes.</p>
+      <p>Sabe por que voc&ecirc; precisa aumentar a dose do Viagra cada vez mais? Porque as veias continuam entupidas com placas de gordura:</p>
+      <video autoplay loop muted playsinline><source src="soluc.mp4" type="video/mp4"></video>
+      <p>Essas placas v&atilde;o se acumulando e por isso a dose precisa ser sempre maior.</p>
+      <p>O LordVigor age na <strong>RAIZ</strong>. Seu produto exclusivo &eacute; focado em desentupir as veias para que o sangue volte a chegar <strong>SOZINHO</strong>, sem precisar for&ccedil;ar. Igual era na sua juventude.</p>
+    </div>
+  </section>
+
+  <!-- PRICING #1 -->
+  <section class="pricing-section pricing-dark" id="kits">
+    <h2 class="section-title">Escolha Seu Kit</h2>
+    <p class="section-sub">Quanto maior o tratamento, maior o desconto e mais tempo de garantia voc&ecirc; recebe.</p>
+    <div class="pricing-grid">
+
+      <!-- 6 FRASCOS -->
+      <div class="p-card featured">
+        <div class="p-badge">MAIS POPULAR</div>
+        <h3>6 Frascos</h3>
+        <p class="p-subtitle">Tratamento de 6 meses</p>
+        <div class="p-img"><img src="t6 frasco.png" alt="6 Frascos LordVigor"></div>
+        <div class="p-installment">12x de</div>
+        <div class="p-price"><span class="cur">R$</span>41,06</div>
+        <p class="p-total">ou R$397,00 &agrave; vista</p>
+        <div class="p-buttons">
+          <a href="https://checkout.payt.com.br/d5e7a42f848de89069733d940881fa90?split=12" class="p-btn p-btn-card">COMPRAR COM CART&Atilde;O</a>
+          <a href="https://checkout.payt.com.br/d5e7a42f848de89069733d940881fa90?payment=pix" class="p-btn p-btn-pix">COMPRAR COM PIX</a>
         </div>
-    </header>
+        <p class="p-ship">&#128666; Frete Gr&aacute;tis</p>
+        <p class="p-guarantee">Garantia de 360 dias (1 ano inteiro)</p>
+        <div class="p-flags"><img src="bandeiras-cartao.webp" alt="Bandeiras"></div>
+      </div>
 
-    <section id="hero">
-        <div class="hero-left">
-            <div class="hero-badge">🍦 Curso Online • Ao Vivo</div>
-            <h1 class="hero-title">Aprenda a fazer sorvete que <span class="highlight">derrete</span> corações.</h1>
-            <p class="hero-subtitle">Do zero ao pote: técnicas italianas, ingredientes naturais e os segredos dos mestres. Aulas gravadas + 3 workshops ao vivo.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/5519981909667?text=Ol%C3%A1%21+Quero+me+inscrever+no+curso+de+sorvete+artesanal." class="btn-primary">Quero me Inscrever</a>
-                <a href="#programa" class="btn-outline">Ver Programa Completo</a>
-            </div>
-            <div class="social-proof">
-                <div class="avatars"><span>😊</span><span>😋</span><span>🥰</span></div>
-                <span class="stars-text">⭐ 4.9 · +2.000 alunos formados</span>
-            </div>
+      <!-- 3 FRASCOS -->
+      <div class="p-card">
+        <h3>3 Frascos</h3>
+        <p class="p-subtitle">Tratamento de 3 meses</p>
+        <div class="p-img"><img src="t3 frasco.png" alt="3 Frascos LordVigor"></div>
+        <div class="p-installment">12x de</div>
+        <div class="p-price"><span class="cur">R$</span>30,72</div>
+        <p class="p-total">ou R$297,00 &agrave; vista</p>
+        <div class="p-buttons">
+          <a href="https://checkout.payt.com.br/6f5ead1f4256eac39bff7abb00c6f238?split=12" class="p-btn p-btn-card">COMPRAR COM CART&Atilde;O</a>
+          <a href="https://checkout.payt.com.br/6f5ead1f4256eac39bff7abb00c6f238?payment=pix" class="p-btn p-btn-pix">COMPRAR COM PIX</a>
         </div>
-        <div class="hero-right">
-            <div class="hero-icecream">
-                <div class="scoop-stack">
-                    <div class="scoop scoop-1"></div>
-                    <div class="scoop scoop-2"></div>
-                    <div class="scoop scoop-3"></div>
-                </div>
-                <div class="cone-triangle"></div>
-                <span class="particle" style="top:8%;left:2%;">🍊</span>
-                <span class="particle" style="top:45%;right:4%;">🫐</span>
-                <span class="particle" style="bottom:20%;left:8%;">💧</span>
-            </div>
+        <p class="p-ship">&#128666; Frete Gr&aacute;tis</p>
+        <p class="p-guarantee">Garantia de 180 dias (6 meses)</p>
+        <div class="p-flags"><img src="bandeiras-cartao.webp" alt="Bandeiras"></div>
+      </div>
+
+      <!-- 1 FRASCO -->
+      <div class="p-card">
+        <h3>1 Frasco</h3>
+        <p class="p-subtitle">Para come&ccedil;ar</p>
+        <div class="p-img"><img src="t1 frasco.png" alt="1 Frasco LordVigor"></div>
+        <div class="p-price"><span class="cur">R$</span>197,00</div>
+        <div class="p-buttons">
+          <a href="https://checkout.payt.com.br/5e94fac6e972b0c182a1692872bc1281?split=12" class="p-btn p-btn-card">COMPRAR COM CART&Atilde;O</a>
+          <a href="https://checkout.payt.com.br/5e94fac6e972b0c182a1692872bc1281?payment=pix" class="p-btn p-btn-pix">COMPRAR COM PIX</a>
         </div>
-        <div class="chocolate-wave">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,30 C360,80 720,0 1440,30 L1440,80 L0,80 Z" fill="#3E2723" opacity="0.75"/></svg>
+        <p class="p-ship">&#128666; Frete Gr&aacute;tis</p>
+        <p class="p-guarantee">Garantia de 60 dias (2 meses)</p>
+        <div class="p-flags"><img src="bandeiras-cartao.webp" alt="Bandeiras"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="guarantee-section">
+    <div class="guarantee-box">
+      <h2>GARANTIA BLINDADA LORDVIGOR</h2>
+      <p>Quando voc&ecirc; compra o LordVigor, voc&ecirc; n&atilde;o t&aacute; comprando s&oacute; um produto. Voc&ecirc; est&aacute; entrando num programa de acompanhamento com <strong>garantia real</strong>.</p>
+      <p>Cada frasco vem com <strong>60 dias de garantia incondicional</strong>. Se voc&ecirc; n&atilde;o ficar 100% satisfeito com os resultados, basta enviar um e-mail para <strong>sac@lordvigor.com.br</strong> e n&oacute;s devolvemos at&eacute; o &uacute;ltimo centavo. Sem perguntas, sem complica&ccedil;&atilde;o.</p>
+      <p>Al&eacute;m disso, voc&ecirc; recebe um <strong>Certificado de Garantia</strong> junto com o produto &mdash; um documento oficial assinado pelos nossos especialistas, com valor jur&iacute;dico, que d&aacute; seguran&ccedil;a total pra voc&ecirc;. Por ter valor jur&iacute;dico, somos obrigados por lei a te reembolsar, sem fazer pergunta.</p>
+      <p>Isso significa que ao adquirir 6 frascos, por exemplo, voc&ecirc; ter&aacute; <strong>360 dias (1 ano inteiro)</strong> de garantia pra testar &agrave; vontade.</p>
+    </div>
+  </section>
+
+  <!-- PERSONALIZAÇÃO -->
+  <section class="copy-block">
+    <div class="copy-inner">
+      <h2>Sua Dose &Eacute; Feita S&oacute; Pro Seu Corpo</h2>
+      <p>Ap&oacute;s a compra, voc&ecirc; recebe um question&aacute;rio r&aacute;pido de 9 perguntas. Pode responder pelo site ou pelo WhatsApp &mdash; nossa equipe de suporte vai entrar em contato com voc&ecirc; pra fazer o acompanhamento.</p>
+      <p>Com as suas respostas, nossa equipe prepara uma dose feita <strong>S&Oacute; pra voc&ecirc;</strong>. N&atilde;o &eacute; a mesma dose do vizinho nem do seu amigo. &Eacute; algo &uacute;nico, feito exclusivamente pro seu corpo.</p>
+      <p>Por isso a taxa de sucesso do LordVigor &eacute; t&atilde;o alta. Porque cada frasco &eacute; diferente. Cada um &eacute; feito pro corpo de um homem s&oacute;.</p>
+    </div>
+  </section>
+
+  <!-- ENTREGA DISCRETA -->
+  <section class="copy-block copy-block-alt">
+    <div class="copy-inner">
+      <h2>Entrega 100% Discreta</h2>
+      <p>A gente sabe que esse assunto &eacute; &iacute;ntimo pra muitos homens. Por isso, a entrega &eacute; <strong>totalmente discreta</strong>.</p>
+      <p>Seu pedido chega numa caixa marrom, sem o nome LordVigor, sem nada escrito sobre o produto. Ningu&eacute;m vai saber o que tem dentro. Sua esposa, seus filhos, seu vizinho &mdash; ningu&eacute;m vai ver. S&oacute; voc&ecirc;.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <h2 class="section-title">D&uacute;vidas Frequentes</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">O que &eacute; o LordVigor?</button>
+        <div class="faq-answer"><p>O LordVigor &eacute; um composto l&iacute;quido 100% natural com f&oacute;rmula personalizada para cada homem. Ap&oacute;s responder um question&aacute;rio, produzimos um produto exclusivo adaptado ao seu organismo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Como funciona a personaliza&ccedil;&atilde;o?</button>
+        <div class="faq-answer"><p>Ap&oacute;s a compra, voc&ecirc; responde um question&aacute;rio de 9 perguntas (peso, idade, h&aacute;bitos, etc.). Com base nessas respostas, nossos especialistas produzem uma f&oacute;rmula &uacute;nica para o seu corpo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Como devo tomar o LordVigor?</button>
+        <div class="faq-answer"><p>Basta pingar uma gota embaixo da l&iacute;ngua todos os dias, ap&oacute;s o caf&eacute; da manh&atilde; ou almo&ccedil;o. Simples e r&aacute;pido.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Em quanto tempo posso ver resultados?</button>
+        <div class="faq-answer"><p>Os resultados variam de pessoa para pessoa, mas nossos clientes relatam melhorias significativas j&aacute; nos primeiros dias de uso. Por isso recomendamos o kit de 6 frascos &mdash; para um tratamento completo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">O LordVigor &eacute; vendido em farm&aacute;cia?</button>
+        <div class="faq-answer"><p>N&atilde;o. Por ser um produto personalizado, a venda &eacute; feita exclusivamente por este site oficial. Se encontrar em outro lugar, &eacute; falsifica&ccedil;&atilde;o.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">A entrega &eacute; discreta?</button>
+        <div class="faq-answer"><p>Sim. Seu pedido chega numa caixa marrom, sem identifica&ccedil;&atilde;o do produto. Ningu&eacute;m saber&aacute; o que tem dentro al&eacute;m de voc&ecirc;.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">E se n&atilde;o funcionar para mim?</button>
+        <div class="faq-answer"><p>Cada frasco vem com garantia blindada de 60 dias. Se n&atilde;o ficar satisfeito, basta enviar um e-mail para sac@lordvigor.com.br e reembolsamos 100% do valor, sem perguntas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">O pagamento &eacute; &uacute;nico ou &eacute; assinatura?</button>
+        <div class="faq-answer"><p>O pagamento &eacute; &uacute;nico. Voc&ecirc; paga uma vez s&oacute; e recebe o produto. N&atilde;o h&aacute; cobran&ccedil;as recorrentes nem assinatura.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP CTA -->
+  <section class="wpp-section">
+    <h2>Ainda Tem D&uacute;vidas?</h2>
+    <p>Fale diretamente com nosso time de especialistas pelo WhatsApp.</p>
+    <a href="https://wa.me/5519981909667?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20LordVigor" class="btn-wpp">&#128172; FALAR NO WHATSAPP</a>
+  </section>
+
+  <!-- PRICING #2 -->
+  <section class="pricing-section pricing-light">
+    <h2 class="section-title">Garanta Seu Kit Agora</h2>
+    <p class="section-sub">Escolha o kit ideal para o seu tratamento.</p>
+    <div class="pricing-grid">
+
+      <div class="p-card featured">
+        <div class="p-badge">MAIS POPULAR</div>
+        <h3>6 Frascos</h3>
+        <p class="p-subtitle">Tratamento de 6 meses</p>
+        <div class="p-img"><img src="t6 frasco.png" alt="6 Frascos LordVigor"></div>
+        <div class="p-installment">12x de</div>
+        <div class="p-price"><span class="cur">R$</span>41,06</div>
+        <p class="p-total">ou R$397,00 &agrave; vista</p>
+        <div class="p-buttons">
+          <a href="https://checkout.payt.com.br/d5e7a42f848de89069733d940881fa90?split=12" class="p-btn p-btn-card">COMPRAR COM CART&Atilde;O</a>
+          <a href="https://checkout.payt.com.br/d5e7a42f848de89069733d940881fa90?payment=pix" class="p-btn p-btn-pix">COMPRAR COM PIX</a>
         </div>
-    </section>
+        <p class="p-ship">&#128666; Frete Gr&aacute;tis</p>
+        <p class="p-guarantee">Garantia de 360 dias (1 ano inteiro)</p>
+        <div class="p-flags"><img src="bandeiras-cartao.webp" alt="Bandeiras"></div>
+      </div>
 
-    <section id="trust-bar">
-        <div class="trust-item"><div class="trust-icon">🎓</div><div class="trust-text"><strong>Certificado Incluso</strong><span>Reconhecido pelo mercado</span></div></div>
-        <div class="trust-item"><div class="trust-icon">📱</div><div class="trust-text"><strong>100% Online</strong><span>Estude no seu ritmo</span></div></div>
-        <div class="trust-item"><div class="trust-icon">👨‍🍳</div><div class="trust-text"><strong>Mentoria ao Vivo</strong><span>Tire dúvidas com chefs</span></div></div>
-        <div class="trust-item"><div class="trust-icon">🥄</div><div class="trust-text"><strong>Receitas Exclusivas</strong><span>Segredos da gelateria artesanal</span></div></div>
-    </section>
-
-    <section id="programa">
-        <h2 class="section-title">O Que Você Vai Aprender</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">🍨</span><span></span></div>
-        <div class="tab-nav">
-            <button class="tab-btn active" data-tab="bases">Bases e Cremes</button>
-            <button class="tab-btn" data-tab="sorbets">Sorbets & Frutas</button>
-            <button class="tab-btn" data-tab="especiais">Edições Especiais</button>
+      <div class="p-card">
+        <h3>3 Frascos</h3>
+        <p class="p-subtitle">Tratamento de 3 meses</p>
+        <div class="p-img"><img src="t3 frasco.png" alt="3 Frascos LordVigor"></div>
+        <div class="p-installment">12x de</div>
+        <div class="p-price"><span class="cur">R$</span>30,72</div>
+        <p class="p-total">ou R$297,00 &agrave; vista</p>
+        <div class="p-buttons">
+          <a href="https://checkout.payt.com.br/6f5ead1f4256eac39bff7abb00c6f238?split=12" class="p-btn p-btn-card">COMPRAR COM CART&Atilde;O</a>
+          <a href="https://checkout.payt.com.br/6f5ead1f4256eac39bff7abb00c6f238?payment=pix" class="p-btn p-btn-pix">COMPRAR COM PIX</a>
         </div>
-        <div class="product-grid" id="modulos-grid"></div>
-    </section>
+        <p class="p-ship">&#128666; Frete Gr&aacute;tis</p>
+        <p class="p-guarantee">Garantia de 180 dias (6 meses)</p>
+        <div class="p-flags"><img src="bandeiras-cartao.webp" alt="Bandeiras"></div>
+      </div>
 
-    <section id="como-funciona" style="padding:80px 40px;background:var(--bg);">
-        <h2 class="section-title">Como Funciona o Curso</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">✨</span><span></span></div>
-        <div class="steps-line" style="display:flex;gap:30px;max-width:1000px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
-            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">📝</div><h4>1. Você se Inscreve</h4><p>Escolha seu plano e ganhe acesso imediato.</p></div>
-            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">🎥</div><h4>2. Aulas Gravadas</h4><p>Mais de 20 horas de conteúdo prático.</p></div>
-            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">👥</div><h4>3. Workshops ao Vivo</h4><p>3 encontros para tirar dúvidas e praticar.</p></div>
-            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">🏅</div><h4>4. Certificado</h4><p>Conclua e receba seu certificado digital.</p></div>
+      <div class="p-card">
+        <h3>1 Frasco</h3>
+        <p class="p-subtitle">Para come&ccedil;ar</p>
+        <div class="p-img"><img src="t1 frasco.png" alt="1 Frasco LordVigor"></div>
+        <div class="p-price"><span class="cur">R$</span>197,00</div>
+        <div class="p-buttons">
+          <a href="https://checkout.payt.com.br/5e94fac6e972b0c182a1692872bc1281?split=12" class="p-btn p-btn-card">COMPRAR COM CART&Atilde;O</a>
+          <a href="https://checkout.payt.com.br/5e94fac6e972b0c182a1692872bc1281?payment=pix" class="p-btn p-btn-pix">COMPRAR COM PIX</a>
         </div>
-    </section>
+        <p class="p-ship">&#128666; Frete Gr&aacute;tis</p>
+        <p class="p-guarantee">Garantia de 60 dias (2 meses)</p>
+        <div class="p-flags"><img src="bandeiras-cartao.webp" alt="Bandeiras"></div>
+      </div>
 
-    <section id="wall-of-love" style="padding:80px 40px;background:#fffefb;">
-        <h2 class="section-title">Alunos que já transformaram sua paixão</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">💛</span><span></span></div>
-        <div class="testimonial-carousel" style="display:flex;gap:20px;overflow-x:auto;max-width:1000px;margin:0 auto;padding:10px 0;">
-            <div class="testimonial-card" style="min-width:280px;background:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow-sm);"><p>"Agora faço sorvetes melhores que os da sorveteria! O curso mudou minha vida."</p><strong>Mariana L.</strong> ⭐⭐⭐⭐⭐</div>
-            <div class="testimonial-card" style="min-width:280px;background:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow-sm);"><p>"As técnicas de gelato italiano são incríveis. Já estou vendendo para amigos."</p><strong>Carlos E.</strong> ⭐⭐⭐⭐⭐</div>
-            <div class="testimonial-card" style="min-width:280px;background:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow-sm);"><p>"O suporte dos chefs é sensacional. Recomendo demais!"</p><strong>Ana J.</strong> ⭐⭐⭐⭐⭐</div>
-        </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="nossa-historia" style="padding:80px 40px;background:var(--bg);display:flex;gap:40px;max-width:1100px;margin:0 auto;flex-wrap:wrap;align-items:center;">
-        <div style="flex:1 1 300px;aspect-ratio:1/1;background:#f5e6d8;border-radius:28px;display:flex;align-items:center;justify-content:center;font-size:8rem;transform:rotate(-3deg);border:6px solid #fff;">👨‍🍳🍓</div>
-        <div style="flex:1 1 300px;">
-            <h3 style="font-family:var(--font-title);font-size:2rem;color:var(--secondary);">Da paixão ao conhecimento</h3>
-            <p>Começamos em 2018 compartilhando receitas caseiras. Hoje já formamos mais de <strong>2.000 alunos</strong> que transformaram a arte do sorvete em profissão ou prazer. Nossa missão é democratizar o gelato de verdade.</p>
-        </div>
-    </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 LordVigor. Todos os direitos reservados. Todo o conte&uacute;do deste site &eacute; de propriedade exclusiva do LordVigor e protegido por leis de direitos autorais.</p>
+    <p>As informa&ccedil;&otilde;es apresentadas n&atilde;o constituem aconselhamento m&eacute;dico. Este produto &eacute; um suplemento alimentar e n&atilde;o substitui tratamentos m&eacute;dicos. Consulte um profissional de sa&uacute;de antes de iniciar o uso.</p>
+    <p>Resultados podem variar de pessoa para pessoa. Depoimentos s&atilde;o de usu&aacute;rios reais e podem n&atilde;o refletir a experi&ecirc;ncia t&iacute;pica.</p>
+    <div class="footer-links">
+      <a href="privacidade.html">Pol&iacute;tica de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="etica.html">Aviso Legal</a>
+    </div>
+  </footer>
 
-    <section id="faq" style="padding:80px 40px;background:#fffefb;max-width:800px;margin:0 auto;">
-        <h2 class="section-title">Perguntas Frequentes</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">❓</span><span></span></div>
-        <div class="faq-item" style="border-bottom:1px solid #e8ddd3;padding:16px 0;cursor:pointer;" onclick="this.classList.toggle('open')">
-            <div style="display:flex;justify-content:space-between;"><span>🍦 Preciso ter experiência?</span><span>+</span></div>
-            <div style="max-height:0;overflow:hidden;transition:0.3s;">Não! O curso é do zero, ideal para iniciantes e também para quem já empreende.</div>
-        </div>
-        <div class="faq-item" style="border-bottom:1px solid #e8ddd3;padding:16px 0;cursor:pointer;" onclick="this.classList.toggle('open')">
-            <div style="display:flex;justify-content:space-between;"><span>🎓 Tem certificado?</span><span>+</span></div>
-            <div style="max-height:0;overflow:hidden;transition:0.3s;">Sim, certificado digital reconhecido em todo o Brasil.</div>
-        </div>
-        <div class="faq-item" style="border-bottom:1px solid #e8ddd3;padding:16px 0;cursor:pointer;" onclick="this.classList.toggle('open')">
-            <div style="display:flex;justify-content:space-between;"><span>⏳ Por quanto tempo tenho acesso?</span><span>+</span></div>
-            <div style="max-height:0;overflow:hidden;transition:0.3s;">Acesso vitalício! Estude no seu tempo.</div>
-        </div>
-    </section>
+  <!-- SCRIPTS -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('active'); });
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+  </script>
 
-    <section id="assinatura">
-        <h2 class="section-title">Escolha seu Plano</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">🎯</span><span></span></div>
-        <div class="plan-grid" id="plan-grid"></div>
-        <p style="text-align:center;margin-top:20px;">🔒 Garantia de 7 dias ou seu dinheiro de volta.</p>
-    </section>
-
-    <section id="newsletter" style="padding:80px 40px;background:linear-gradient(135deg,#FF6B4A,#c0392b);text-align:center;color:#fff;clip-path:ellipse(120% 100% at 50% 0%);">
-        <h3 style="font-family:var(--font-title);font-size:2rem;">Ganhe uma aula grátis!</h3>
-        <p>Cadastre-se e receba uma aula completa de sorvete de pistache.</p>
-        <div style="display:flex;gap:10px;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
-            <input type="email" placeholder="Seu melhor e-mail" style="flex:1 1 250px;padding:14px 20px;border-radius:50px;border:2px solid #fff;background:rgba(255,255,255,0.2);color:#fff;" id="news-email">
-            <button onclick="document.getElementById('coupon-display').innerText='Aula enviada! 🎉'" style="padding:14px 28px;border-radius:50px;border:none;background:#fff;color:#FF6B4A;font-weight:700;">Quero minha aula</button>
-        </div>
-        <div id="coupon-display" style="margin-top:14px;font-weight:700;"></div>
-    </section>
-
-    <footer id="site-footer">
-        <div><h4>🍦 GELATÒ</h4><p>CNPJ: 60.843.768/0001-59<br>ML SORVETERIA E CAFETERIA LTDA</p></div>
-        <div><h4>Mapa do Site</h4><a href="#hero">Início</a><a href="#programa">Programa</a><a href="#assinatura">Planos</a></div>
-        <div><h4>Legal</h4><a href="privacidade.html">Política de Privacidade</a><a href="reembolso.html">Política de Reembolso</a><a href="termos.html">Termos de Uso</a><a href="aviso.html">Aviso Legal</a><a href="entrega.html">Política de Entrega</a></div>
-        <div><h4>Redes Sociais</h4><a href="#">📸 Instagram</a><a href="#">📘 Facebook</a></div>
-    </footer>
-    <div class="footer-bottom">© 2025 Gelatò. Todos os direitos reservados. 🍦</div>
-
-    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:30px;right:30px;width:48px;height:48px;border-radius:50%;background:#FF6B4A;color:#fff;border:none;font-size:1.4rem;cursor:pointer;z-index:998;opacity:0;pointer-events:none;transition:0.3s;">🥄</button>
-
-    <script>
-        const header = document.getElementById('site-header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 60);
-            const btn = document.getElementById('back-to-top');
-            if (window.scrollY > 500) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; } else { btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; }
-        });
-
-        const modulos = {
-            bases: [
-                { nome: 'Base Branca Cremosa', desc: 'Fior di latte, crema e variações.', emoji: '🍨' },
-                { nome: 'Base de Chocolate', desc: 'Chocolate belga e cacau intenso.', emoji: '🍫' },
-                { nome: 'Gelato de Baunilha', desc: 'Fava de baunilha verdadeira.', emoji: '🤍' },
-            ],
-            sorbets: [
-                { nome: 'Sorbet de Manga', desc: 'Técnica para frutas tropicais.', emoji: '🥭' },
-                { nome: 'Sorbet de Frutas Vermelhas', desc: 'Mix de berries e equilíbrio.', emoji: '🍓' },
-                { nome: 'Sorbet Cítrico', desc: 'Limão siciliano e maracujá.', emoji: '🍋' },
-            ],
-            especiais: [
-                { nome: 'Tiramisù Gelato', desc: 'Mascarpone e café espresso.', emoji: '☕' },
-                { nome: 'Doce de Leite com Nozes', desc: 'Caramelo e crocância.', emoji: '🥜' },
-                { nome: 'Gelato de Pistache', desc: 'Pistache italiano puro.', emoji: '💚' },
-            ]
-        };
-        const grid = document.getElementById('modulos-grid');
-        let activeTab = 'bases';
-        function renderModulos(tab) {
-            grid.innerHTML = modulos[tab].map(m => `
-                <div class="product-card">
-                    <div class="product-img">${m.emoji}</div>
-                    <div class="product-name">${m.nome}</div>
-                    <div class="product-desc">${m.desc}</div>
-                </div>
-            `).join('');
-        }
-        renderModulos('bases');
-        document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', function() {
-            document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
-            this.classList.add('active');
-            activeTab = this.dataset.tab;
-            renderModulos(activeTab);
-        }));
-
-        const plans = [
-            { nome: 'Curso Essencial', preco: 297, original: 497, beneficios: ['Aulas gravadas', 'Certificado', 'Suporte 30 dias'], icon: '📘' },
-            { nome: 'Curso Completo', preco: 597, original: 997, beneficios: ['Tudo do Essencial', '+3 Workshops ao vivo', 'Grupo exclusivo'], icon: '🎓', featured: true },
-            { nome: 'Master com Mentoria', preco: 997, original: 1997, beneficios: ['Tudo do Completo', 'Mentoria individual', 'Receitas vitalícias'], icon: '👑' },
-        ];
-        document.getElementById('plan-grid').innerHTML = plans.map(p => {
-            const mensagem = `Olá! Quero me inscrever no ${p.nome} de Sorvete Artesanal.`;
-            const url = `https://wa.me/5519981909667?text=${encodeURIComponent(mensagem)}`;
-            return `
-                <div class="plan-card${p.featured ? ' featured' : ''}">
-                    ${p.featured ? '<span class="popular-badge">Mais Popular</span>' : ''}
-                    <div style="font-size:3rem;">${p.icon}</div>
-                    <h3>${p.nome}</h3>
-                    <ul style="list-style:none;text-align:left;margin:16px 0;">${p.beneficios.map(b => '<li>✅ '+b+'</li>').join('')}</ul>
-                    <div class="plan-price">R$ ${p.preco.toFixed(2).replace('.',',')}<small style="text-decoration:line-through;color:#b0a49a;">R$ ${p.original.toFixed(2).replace('.',',')}</small></div>
-                    <button class="btn-plan" onclick="window.location.href='${url}'">Inscrever-se</button>
-                </div>
-            `;
-        }).join('');
-
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const answer = this.querySelector('div:last-child');
-                if (this.classList.contains('open')) {
-                    this.classList.remove('open');
-                    answer.style.maxHeight = '0';
-                } else {
-                    this.classList.add('open');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
